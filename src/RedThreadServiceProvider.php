@@ -7,7 +7,7 @@
 	class RedThreadServiceProvider extends ServiceProvider
 	{
 		/**
-		 * Register any application services.
+		 * Register the application services.
 		 */
 		public function register(): void
 		{
@@ -18,12 +18,17 @@
 		}
 
 		/**
-		 * Bootstrap any package services.
+		 * Bootstrap the application services.
 		 */
 		public function boot(): void
 		{
-			$this->publishes([
-				__DIR__ . '/../config/red-thread.php' => config_path('red-thread.php'),
-			]);
+			if ($this->app->runningInConsole()) {
+				$this->publishes(
+					[
+						__DIR__ . '/../config/red-thread.php' => config_path('red-thread.php'),
+					],
+					'red-thread'
+				);
+			}
 		}
 	}
