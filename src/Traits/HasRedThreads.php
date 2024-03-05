@@ -48,6 +48,6 @@
 				return (bool)$method->getAttributes(RedThread::class);
 			}
 
-			return $method->hasReturnType() and in_array($method->getReturnType(), $relationshipTypes);
+			return $method->hasReturnType() and in_array($method->getReturnType()->getName(), $relationshipTypes);
 		}
 	}
