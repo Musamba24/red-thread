@@ -171,6 +171,10 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 Feel free to contribute to this package and help me to improve it. You can contribute by opening an issue or a pull
 request.
 
+## Roadmap
+
+- [ ] Add artisan command to list relationships via CLI.
+
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within RedThread, please open an issue.
