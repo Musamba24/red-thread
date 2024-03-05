@@ -358,7 +358,7 @@ if (! $useLaravelRay) {
 }
 
 if (! $useUpdateChangelogWorkflow) {
-    safeUnlink(__DIR__.'/.github/workflows/update-changelog.yml');
+	safeUnlink(__DIR__ . '/.github/workflows/php-pipeline.yml');
 }
 
 confirm('Execute `composer install` and run tests?') && run('composer install && composer test');
