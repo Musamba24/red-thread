@@ -42,7 +42,7 @@
 		private static function isRedThreaded(ReflectionMethod $method): bool
 		{
 			$checkForAttribute = Config::get('red-thread.check_for_attribute', true);
-			$relationshipTypes = Config::get('red-thread.relationships_types', []);
+			$relationshipTypes = Config::get('red-thread.relationship_types', []);
 
 			if ($checkForAttribute) {
 				return (bool)$method->getAttributes(RedThread::class);

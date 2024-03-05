@@ -24,7 +24,7 @@
 		|
 		*/
 
-		'relationships' => [
+		'relationship_types' => [
 			Illuminate\Database\Eloquent\Relations\HasOne::class,
 			Illuminate\Database\Eloquent\Relations\HasMany::class,
 			Illuminate\Database\Eloquent\Relations\MorphTo::class,
