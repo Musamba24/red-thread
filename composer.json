@@ -21,8 +21,7 @@
         }
     ],
     "require": {
-        "php": "^8.1",
-        "illuminate/contracts": "^10.0"
+        "php": "^8.1"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -39,13 +38,20 @@
     },
     "autoload": {
         "psr-4": {
-            "Musamba24\\RedThread\\": "src/"
+            "Musamba\\RedThread\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Musamba24\\RedThread\\Tests\\": "tests/",
+            "Musamba\\RedThread\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Musamba\\RedThread\\RedThreadServiceProvider"
+            ]
         }
     },
     "scripts": {
@@ -71,16 +77,6 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "phpstan/extension-installer": true
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Musamba24\\RedThread\\RedThreadServiceProvider"
-            ],
-            "aliases": {
-                "RedThread": "Musamba24\\RedThread\\Facades\\RedThread"
-            }
         }
     },
     "minimum-stability": "dev",
