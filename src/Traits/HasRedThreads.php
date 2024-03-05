@@ -12,7 +12,6 @@
 		/**
 		 * Returns an array with the methods that are recognized as relationships.
 		 *
-		 * @return array
 		 *
 		 * @throws ReflectionException
 		 */
@@ -24,7 +23,14 @@
 				$reflectionMethod = new ReflectionMethod(static::class, $method);
 
 				if (self::isRedThreaded($reflectionMethod)) {
-					$relationships[$reflectionMethod->name] = $reflectionMethod->getReturnType()?->getName() ?? null;
+					$returnType          = $reflectionMethod->getReturnType()?->getName() ?? null;
+					$returnFullNamespace = Config::get('red-thread.full_namespace', true);
+
+					if (!$returnFullNamespace) {
+						$returnType = class_basename($returnType);
+					}
+
+					$relationships[$reflectionMethod->name] = $returnType;
 				}
 			}
 
@@ -34,10 +40,6 @@
 		/**
 		 * If the package is configured to check for attributes, it will
 		 * check for it otherwise it will check the return type.
-		 *
-		 * @param ReflectionMethod $method
-		 *
-		 * @return bool
 		 */
 		private static function isRedThreaded(ReflectionMethod $method): bool
 		{
