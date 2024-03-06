@@ -129,6 +129,7 @@ request.
 ## Roadmap
 
 - [ ] Add artisan command to list relationships via CLI.
+- [ ] Add related model class and foreign key information.
 
 ## Security Vulnerabilities
 
