@@ -72,7 +72,7 @@ class Book extends Model
 Calling the provided `relationships()` static method on a model instance:
 
 ```php
-User::relationships();
+Book::relationships();
 ```
 
 An array containing all the relationships will be returned.
